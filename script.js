@@ -13,9 +13,9 @@
             const answer = parseInt(document.getElementById("answerInput").value) - 1; // Adjust to 0-based index
 
             questions.push({
-                q: questionText,
-                options: options,
-                ans: answer
+                q:questionText,
+                options:options,
+                ans:answer
             });
 
             localStorage.setItem("questions", JSON.stringify(questions));
@@ -27,10 +27,10 @@
         // Function to display data in the <pre> tag in desired format
         function displayData() {
             const formattedData = questions.map(q => `{
-    q: "${q.question}",
+    q:"${q.q}",
     options: ${JSON.stringify(q.options)},
-    ans: ${q.answer} 
-}`).join('\n\n');
+    ans: ${q.ans}, 
+},`).join('\n\n');
             document.getElementById("dataDisplay").textContent = formattedData;
         }
 
