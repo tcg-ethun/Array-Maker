@@ -14,7 +14,7 @@
 
             questions.push({
                 q: questionText,
-                option: options,
+                options: options,
                 ans: answer
             });
 
@@ -28,7 +28,7 @@
         function displayData() {
             const formattedData = questions.map(q => `{
     q: "${q.question}",
-    option: ${JSON.stringify(q.options)},
+    options: ${JSON.stringify(q.options)},
     ans: ${q.answer} 
 }`).join('\n\n');
             document.getElementById("dataDisplay").textContent = formattedData;
